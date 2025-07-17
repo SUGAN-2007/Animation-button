@@ -1,0 +1,72 @@
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+<style>
+body {
+  background: #555;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+}
+
+.quote {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  position: relative;
+}
+
+.quote::before {
+  content: "“";
+  color: red;
+  font-size: 2rem;
+  margin-right: 5px;
+}
+
+.quote::after {
+  content: "”";
+  color: red;
+  font-size: 2rem;
+  margin-left: 5px;
+}
+
+.mic {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #1c084f;
+  border-radius: 50%;
+}
+
+.mic::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(28, 8, 79, 0.4);
+  animation: pulse 2s infinite;
+  z-index: 0; /* was -1 */
+}
+
+/* Glow pulse */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+</style>
+
+<div class="container">
+  <div class="mic"></div>
+</div>
